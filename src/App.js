@@ -2,7 +2,7 @@ import React from 'react';
 import Contacts from './components/contact/Contacts';
 import Header from './components/layout/Header';
 import { Provider } from './context';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { HashRouter as Router, Route, Switch } from 'react-router-dom';
 import AddContact from './components/contact/AddContact';
 import EditContact from './components/contact/EditContact';
 import About from './components/pages/About';
@@ -13,7 +13,7 @@ import './App.css';
 function App() {
   return (
     <Provider>
-      <Router>
+      <Router basename={process.env.PUBLIC_URL}>
         <div className="App">
           <Header brand="Contact Manager" />
           <div className="container">
